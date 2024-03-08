@@ -1,0 +1,181 @@
+<!-- layout dashboard -->
+<!-- content -->
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Traffic Page</h1>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Starter Page</li>
+        </ol>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row flex-column">
+      <!-- /.col-md-6 -->
+      <div class="col">
+        <div class="card card-primary card-outline">
+          <div class="card-header d-flex align-items-center">
+            <h5 class="m-0">Traffic</h5>
+            <div class="btn-group ml-auto">
+              <button
+                type="button"
+                class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Yearly Traffic
+              </button>
+              <ul class="dropdown-menu overflow-auto" style="max-height: 200px">
+                <li>
+                  <a class="dropdown-item" href="">2023</a>
+                  <a class="dropdown-item" href="">2023</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- content -->
+            <div id="chart"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <!-- /.card -->
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">Traffic</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Date</th>
+                  <th>Total Upload</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>December</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>December</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>December</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>December</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>December</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>December</td>
+                  <td>9</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>No</th>
+                  <th>Date</th>
+                  <th>Total Upload</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content -->
+<!-- plugins -->
+<script src="dist/bs-5/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('dist/bs-5/bootstrap.bundle.min.js') }}"></script>
+
+<script src="{{ asset('plugins/apexcharts/dist/apexcharts.min.js') }}"></script>
+
+<script>
+  var options = {
+    series: [
+      {
+        name: "series1",
+        data: $total,
+        // data: [31, 40, 28, 51, 42, 109, 100],
+      },
+    ],
+    chart: {
+      height: 350,
+      type: "area",
+      export: {
+        csv: {
+          filename: year,
+          columnDelimiter: ",",
+        },
+        svg: {
+          filename: year,
+        },
+        png: {
+          filename: year,
+        },
+      },
+    },
+
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    xaxis: {
+      categories: month,
+      // categories: [
+      //   "January",
+      //   "February",
+      //   "March",
+      //   "April",
+      //   "May",
+      //   "June",
+      //   "July",
+      // ],
+    },
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
+</script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>

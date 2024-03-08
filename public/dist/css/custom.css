@@ -1,0 +1,100 @@
+* {
+    font-family: "Inter", sans-serif;
+}
+.bg-gallery-yellow {
+    background: var(
+        --bg-gradient,
+        linear-gradient(152deg, #fff3cd 0.99%, #f8f9fa 99.43%)
+    );
+    background-attachment: fixed;
+}
+.gallery-rounded {
+    margin-top: 156px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    gap: 64px;
+    /* border-radius: 48px; */
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0px 4px 100px 2px rgba(0, 0, 0, 0.15),
+        0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10.75px);
+}
+.bg-yellow-100 {
+    background: var(--Yellow-100, #fff3cd);
+}
+.bg-yellow-100:hover {
+    background: var(--Yellow-100, #fff3cd);
+}
+.profile-img {
+    width: 64px;
+    vertical-align: middle;
+    height: 64px;
+    border-radius: 50%;
+}
+.image {
+    min-height: 100vh;
+}
+@media only screen and (max-width: 600px) {
+    .image {
+    min-height: auto;
+}
+    .detail-image {
+    min-height: 480px;
+}
+}
+.rounded-40 {
+    border-radius: 24px;
+}
+.mt-156 {
+    margin-top: 156px;
+}
+.setting-container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0px 4px 100px 2px rgba(0, 0, 0, 0.15),
+        0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10.75px);
+}
+.welcome {
+    background-image: url(/dist/img/welcome.png);
+    background-position: center;
+}
+.dropdown-menu {
+    left: -50px !important;
+}
+#toast-container {
+    width: auto !important;
+}
+#cover-title {
+    background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.5));
+    height: auto;
+    /* background-color: none !important; */
+}
+.imghvr-fade img {
+    opacity: 1 !important;
+}
+.images {
+ 	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+/* .images[data-macy-complete="1"] {
+  opacity: 1;
+ 	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+} */
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
